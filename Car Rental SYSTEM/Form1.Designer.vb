@@ -31,8 +31,8 @@ Partial Class Form1
         Me.TextBoxID = New System.Windows.Forms.TextBox()
         Me.TextBoxCar = New System.Windows.Forms.TextBox()
         Me.TextBoxRenter = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerStart = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerEnd = New System.Windows.Forms.DateTimePicker()
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnRead = New System.Windows.Forms.Button()
@@ -115,19 +115,19 @@ Partial Class Form1
         Me.TextBoxRenter.Size = New System.Drawing.Size(227, 20)
         Me.TextBoxRenter.TabIndex = 8
         '
-        'DateTimePicker1
+        'DateTimePickerStart
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(218, 156)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(227, 20)
-        Me.DateTimePicker1.TabIndex = 9
+        Me.DateTimePickerStart.Location = New System.Drawing.Point(218, 156)
+        Me.DateTimePickerStart.Name = "DateTimePickerStart"
+        Me.DateTimePickerStart.Size = New System.Drawing.Size(227, 20)
+        Me.DateTimePickerStart.TabIndex = 9
         '
-        'DateTimePicker2
+        'DateTimePickerEnd
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(218, 194)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(227, 20)
-        Me.DateTimePicker2.TabIndex = 10
+        Me.DateTimePickerEnd.Location = New System.Drawing.Point(218, 194)
+        Me.DateTimePickerEnd.Name = "DateTimePickerEnd"
+        Me.DateTimePickerEnd.Size = New System.Drawing.Size(227, 20)
+        Me.DateTimePickerEnd.TabIndex = 10
         '
         'btnCreate
         '
@@ -183,8 +183,8 @@ Partial Class Form1
         Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnCreate)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.DateTimePickerEnd)
+        Me.Controls.Add(Me.DateTimePickerStart)
         Me.Controls.Add(Me.TextBoxRenter)
         Me.Controls.Add(Me.TextBoxCar)
         Me.Controls.Add(Me.TextBoxID)
@@ -212,8 +212,8 @@ Partial Class Form1
     Friend WithEvents TextBoxID As TextBox
     Friend WithEvents TextBoxCar As TextBox
     Friend WithEvents TextBoxRenter As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents DateTimePickerStart As DateTimePicker
+    Friend WithEvents DateTimePickerEnd As DateTimePicker
     Friend WithEvents btnCreate As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnRead As Button

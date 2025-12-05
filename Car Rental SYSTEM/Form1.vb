@@ -1,21 +1,14 @@
-﻿Imports System.Data.SqlClient
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports MySql.Data.MySqlClient
+
 
 Public Class Form1
     Dim conn As MySqlConnection
     Dim Command As MySqlCommand
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
 
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Dim query As String = "INSERT INTO carrental_tb (car_model, renter_name, start_date, end_date) VALUES (@car_model, @renter_name, @start_date, @end_date)"
+        Dim query As String = "INSERT INTO carrental (car_model, renter_name, start_date, end_date) VALUES (@car_model, @renter_name, @start_date, @end_date)"
         Try
-            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_est;")
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_db;")
                 conn.Open()
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@car_model", TextBoxCar.Text)
@@ -33,10 +26,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnRead_Click(sender As Object, e As EventArgs) Handles btnRead.Click
-        Dim query As String = "SELECT * FROM carrental_tb"
+        Dim query As String = "SELECT * FROM carrental"
 
         Try
-            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_est;")
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_db;")
                 Dim adapter As New MySqlDataAdapter(query, conn)
                 Dim table As New DataTable()
                 adapter.Fill(table)
@@ -48,10 +41,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Dim query = "UPDATE carrental_tb SET car_model=@car_model,renter_name=@renter_name,start_date=@start_date,end_date=@end_date WHERE id=@id"
+        Dim query = "UPDATE carrental SET car_model=@car_model,renter_name=@renter_name,start_date=@start_date,end_date=@end_date WHERE id=@id"
 
         Try
-            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_est;")
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_db;")
                 conn.Open()
 
                 Using cmd As New MySqlCommand(query, conn)
@@ -70,10 +63,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim query = "DELETE FROM carrental_tb WHERE id=@id"
+        Dim query = "DELETE FROM carrental WHERE id=@id"
 
         Try
-            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_est;")
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=carrental_db;")
                 conn.Open()
 
                 Using cmd As New MySqlCommand(query, conn)
@@ -89,7 +82,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         conn = New MySqlConnection
-        conn.ConnectionString = "server=localhost; userid=root; password=root; database=carrental_est;"
+        conn.ConnectionString = "server=localhost; userid=root; password=root; database=carrental_db;"
 
         Try
             conn.Open()
